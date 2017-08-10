@@ -1,0 +1,58 @@
+[core]
+    autocrlf = input
+    filemode = false
+    editor = vim
+    pager = most
+[user]
+    name = Bjuvefors
+    email = lb.andreas@gmail.com
+[color]
+    ui = auto
+[color "branch"]
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+[alias]
+    br = branch
+    co = checkout
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    l = log --oneline --graph
+    lg = log --graph --decorate
+    s = status
+    st = status
+    stat = status
+    stl = stash list
+    di = diff
+    tree = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    hist = log --graph --decorate --pretty=oneline --abbrev-commit
+    rlog = log --branches --remotes --decorate --oneline --graph
+    # Unaplies local commit but wont remove whats added to it.
+    re-lo-com= reset --soft HEAD~1
+    activebranch = "!git branch | egrep '^\\*' | sed 's/\\* //'"
+    out-to-main = "!git log master..`git activebranch`"
+    in-from-main = "!git log `git activebranch`..master"
+[push]
+    default = simple
+[merge]
+        tool = kdiff3
+[mergetool "kdiff3"]
+        path = /usr/bin/kdiff3
+        trustExitCode = false
+        prompt = false
+[diff]
+        tool = kdiff3
+[difftool "kdiff3"]
+        path = /usr/bin/kdiff3
+        trustExitCode = false
+        prompt = false
